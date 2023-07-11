@@ -17,14 +17,23 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        const course = 'ReactJS'
-        const ul = <ul className='course-list'>
-            <li style={{ color: "red" }}>JavaScript</li>
-            <li>{course}</li>
-        </ul>
+        class Header extends React.Component {
+            render() {
+                return <header className="Header">Header</header>
+            }
+        }
+
+        const app = (
+            <React.Fragment>
+                <Header/>
+                <main className="Content">Content</main> 
+                <footer className="footer">Footer</footer> 
+            </React.Fragment>
+        )
 
         const rootContainer = document.getElementById('root')
-        ReactDOM.createRoot(rootContainer).render(ul)
+        ReactDOM.createRoot(rootContainer).render(app)
+        console.log(app)
     </script>
 </body>
 
